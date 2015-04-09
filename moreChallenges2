@@ -1,0 +1,9 @@
+def tick_toward start, target
+  result = [start]
+  while result.last != target
+    result << result.last.each_with_index.map do |x,i|
+      x == target[i] ? x : x + (target[i]>start[i] ? 1 : -1)
+    end
+  end
+  result
+end
